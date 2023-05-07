@@ -39,3 +39,5 @@ const questions = [
 async function init() {
   var userDefinedLogoParams = await inquirer.prompt(questions);
 }
+
+init();
