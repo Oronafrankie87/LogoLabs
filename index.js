@@ -21,7 +21,7 @@ const questions = [
     name: "Text",
     message: "Whats the name of your brand or company?",
     validate: (input) => {
-      const maxLength = 20;
+      const maxLength = 10;
       if (input.length > maxLength) {
         return `Text must be ${maxLength} characters or less to fit over the shape.`;
       }
@@ -35,6 +35,9 @@ const questions = [
     choices: ["Red", "Green", "Blue", "Yellow", "White", "Black"],
   },
 ];
+
+//The following async/promise and await function was suggested by an askBCS tutor and looked up at websitehttps://www.w3schools.com/js/js_async.asp
+//Await is used to unwrap promises by passing a promise as the expression
 
 async function init() {
   var userDefinedLogoParams = await inquirer.prompt(questions);
@@ -53,6 +56,11 @@ async function init() {
   // Set svg.shape to be the return value of shape.createShape()
   // set svg.text to be the text that user inputed and formatted to svg standards.
   // call render method of SVG and write the value to the svg file
+  svg.shape = shape.createShape();
+  svg.text = `<text x="150" y="100" fill="${userDefinedLogoParams.textColor}" font-size="30" font-weight="bold" text-anchor="middle">${userDefinedLogoParams.Text}</text>`;
+  const svgContents = svg.render();
+  fs.writeFileSync("logo.svg", svgContents);
+
 }
 
 
