@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const {Triangle, Circle, Square } =require('./lib/shapes.js');
+const {SVG} = require('./lib/svg.js')
 
 const questions = [
   {
@@ -37,6 +38,21 @@ const questions = [
 
 async function init() {
   var userDefinedLogoParams = await inquirer.prompt(questions);
+  var svg = new SVG();
+  var shape;
+  if (userDefinedLogoParams.shape == "Circle") {
+    shape = new Circle(userDefinedLogoParams.color);
+  }
+  if (userDefinedLogoParams.shape == "Triangle") {
+    shape = new Triangle(userDefinedLogoParams.color);
+  }
+  if (userDefinedLogoParams.shape == "Square") {
+    shape = new Square(userDefinedLogoParams.color);
+  }
+
+  // Set svg.shape to be the return value of shape.createShape()
+  // set svg.text to be the text that user inputed and formatted to svg standards.
+  // call render method of SVG and write the value to the svg file
 }
 
 
