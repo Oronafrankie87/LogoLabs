@@ -10,11 +10,27 @@ const questions = [
     message: `Welcome to LogoLabs, for starters what shape do you want for your background?`,
     choices: ["Circle", "Triangle", "Square"],
   },
+  // {
+  //   type: "list",
+  //   name: "color",
+  //   message: "What color would you like for your shape?",
+  //   choices: ["Red", "Green", "Blue", "Yellow"],
+  // },
+  //AskBCS tutor helped me locate the steps for the following code, I ran it through chat gpt to help understand what exactly it was doing.
   {
-    type: "list",
+    type: "input",
     name: "color",
-    message: "What color would you like for your shape?",
-    choices: ["Red", "Green", "Blue", "Yellow"],
+    message: "Enter a color keyword or hexadecimal code for your shape:",
+    validate: function (value) {
+      if (
+        /^#[0-9A-F]{6}$/i.test(value) ||
+        /^(red|green|blue|yellow)$/i.test(value)
+      ) {
+        return true;
+      } else {
+        return "Please enter a valid color keyword or hexadecimal code.";
+      }
+    },
   },
   {
     type: "input",
@@ -28,11 +44,26 @@ const questions = [
       return true;
     },
   },
+  // {
+  //   type: "list",
+  //   name: "textColor",
+  //   message: "What color would you like the text to be?",
+  //   choices: ["Red", "Green", "Blue", "Yellow", "White", "Black"],
+  // },
   {
-    type: "list",
+    type: "input",
     name: "textColor",
-    message: "What color would you like the text to be?",
-    choices: ["Red", "Green", "Blue", "Yellow", "White", "Black"],
+    message: "Enter a color keyword or hexadecimal code for your shape:",
+    validate: function (value) {
+      if (
+        /^#[0-9A-F]{6}$/i.test(value) ||
+        /^(red|green|blue|yellow)$/i.test(value)
+      ) {
+        return true;
+      } else {
+        return "Please enter a valid color keyword or hexadecimal code.";
+      }
+    },
   },
 ];
 
