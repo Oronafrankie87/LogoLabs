@@ -1,7 +1,6 @@
- const inquirer = require("inquirer");
- const fs = require("fs");
-//  const {Triangle, }
-
+const inquirer = require("inquirer");
+const fs = require("fs");
+const {Triangle, Circle, Square } =require('./lib/shapes.js');
 
 const questions = [
   {
@@ -19,8 +18,7 @@ const questions = [
   {
     type: "input",
     name: "Text",
-    message:
-      "Whats the name of your brand or company?",
+    message: "Whats the name of your brand or company?",
     validate: (input) => {
       const maxLength = 20;
       if (input.length > maxLength) {
@@ -40,5 +38,7 @@ const questions = [
 async function init() {
   var userDefinedLogoParams = await inquirer.prompt(questions);
 }
+
+
 
 init();
