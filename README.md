@@ -1,2 +1,1 @@
-# LogoLabs
-Logo Generator
+# LogoLabs Logo Generator
