@@ -1,4 +1,4 @@
-# LogoLabs Logo Generator
+# LogoLabs:   Logo Generator
 
 ## Description 
 LogoLabs is a command-line application that enables users to generate logos for their brand or company by inputting information on shapes, colors and text.  The application supports three types of shapes, including squares, circles and triangles and allows users to specify the color of the shape using a hexadecimal value or a pre-defined color name.  Users are prompted to add text to the logo and the color of the text.
@@ -9,7 +9,7 @@ Overall, LogoLabs is a powerful tool for anyone who wants to create a profession
 
 ## Table of Content
 - ScreenCastify demo link
-- Example image
+- Shape Example
 - Installation
 - Usage
 - Built with...
@@ -17,9 +17,12 @@ Overall, LogoLabs is a powerful tool for anyone who wants to create a profession
 - License
 
 ## ScreenCastify demo link
+[LogoLabs screencastify demo](https://watch.screencastify.com/v/nHayL21MypgXVWaBix8T)
 
 
-## Example Image
+## Shape Example
+![LogoLabs Example](./Image/LogoLabs.png)
+
 
 
 ## Installation
@@ -47,7 +50,7 @@ Overall, LogoLabs is a powerful tool for anyone who wants to create a profession
 
 
 ## License
-  This project has an MIT license 
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
